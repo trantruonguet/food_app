@@ -1,3 +1,226 @@
+## foodpanda_admin_web_portal
+
+# Miscellaneous
+/foodpanda_admin_web_portal/*.class
+/foodpanda_admin_web_portal/*.log
+/foodpanda_admin_web_portal/*.pyc
+/foodpanda_admin_web_portal/*.swp
+/foodpanda_admin_web_portal/.DS_Store
+/foodpanda_admin_web_portal/.atom/
+/foodpanda_admin_web_portal/.buildlog/
+/foodpanda_admin_web_portal/.history
+/foodpanda_admin_web_portal/.svn/
+/foodpanda_admin_web_portal/migrate_working_dir/
+
+# IntelliJ related
+/foodpanda_admin_web_portal/*.iml
+/foodpanda_admin_web_portal/*.ipr
+/foodpanda_admin_web_portal/*.iws
+/foodpanda_admin_web_portal/.idea/
+
+
+# The .vscode folder contains launch configuration and tasks you configure in
+# VS Code which you may wish to be included in version control, so this line
+# is commented out by default.
+#.vscode/
+
+# Flutter/Dart/Pub related
+/foodpanda_admin_web_portal/**/doc/api/
+/foodpanda_admin_web_portal/**/ios/Flutter/.last_build_id
+/foodpanda_admin_web_portal/.dart_tool/
+/foodpanda_admin_web_portal/.flutter-plugins
+/foodpanda_admin_web_portal/.flutter-plugins-dependencies
+/foodpanda_admin_web_portal/.packages
+/foodpanda_admin_web_portal/.pub-cache/
+/foodpanda_admin_web_portal/.pub/
+/foodpanda_admin_web_portal/build/
+pubspec.lock
+
+# Symbolication related
+/foodpanda_admin_web_portal/app.*.symbols
+
+# Obfuscation related
+/foodpanda_admin_web_portal/app.*.map.json
+
+# Android Studio will place build artifacts here
+/foodpanda_admin_web_portal/android/app/debug
+/foodpanda_admin_web_portal/android/app/profile
+/foodpanda_admin_web_portal/android/app/release
+
+# Ios
+/foodpanda_admin_web_portal/ios/Podfile.lock
+
+# Env
+/foodpanda_admin_web_portal/.env
+
+/foodpanda_sellers_app/
+/foodpanda_users_app/
+
+#------------------------------------------------
+## foodpanda_riders_app/
+# Miscellaneous
+foodpanda_riders_app/*.class
+foodpanda_riders_app/*.log
+foodpanda_riders_app/*.pyc
+foodpanda_riders_app/*.swp
+foodpanda_riders_app/.DS_Store
+foodpanda_riders_app/.atom/
+foodpanda_riders_app/.buildlog/
+foodpanda_riders_app/.history
+foodpanda_riders_app/.svn/
+foodpanda_riders_app/migrate_working_dir/
+
+# IntelliJ related
+foodpanda_riders_app/*.iml
+foodpanda_riders_app/*.ipr
+foodpanda_riders_app/*.iws
+foodpanda_riders_app/.idea/
+
+# The .vscode folder contains launch configuration and tasks you configure in
+# VS Code which you may wish to be included in version control, so this line
+# is commented out by default.
+#.vscode/
+
+# Flutter/Dart/Pub related
+foodpanda_riders_app/**/doc/api/
+foodpanda_riders_app/**/ios/Flutter/.last_build_id
+foodpanda_riders_app/.dart_tool/
+foodpanda_riders_app/.flutter-plugins
+foodpanda_riders_app/.flutter-plugins-dependencies
+foodpanda_riders_app/.packages
+foodpanda_riders_app/.pub-cache/
+foodpanda_riders_app/.pub/
+foodpanda_riders_app/build/
+foodpanda_riders_app/pubspec.lock
+
+# Symbolication related
+foodpanda_riders_app/app.*.symbols
+
+# Obfuscation related
+foodpanda_riders_app/app.*.map.json
+
+# Android Studio will place build artifacts here
+foodpanda_riders_app/android/app/debug
+foodpanda_riders_app//android/app/profile
+foodpanda_riders_app/android/app/release
+
+# Ios
+foodpanda_riders_app/ios/Podfile.lock
+
+# Env
+foodpanda_riders_app/.env
+
+
+#------------------------------------------------
+## foodpanda_sellers_app/
+# Miscellaneous
+foodpanda_sellers_app/*.class
+foodpanda_sellers_app/*.log
+foodpanda_sellers_app/*.pyc
+foodpanda_sellers_app/*.swp
+foodpanda_sellers_app/.DS_Store
+foodpanda_sellers_app/.atom/
+foodpanda_sellers_app/.buildlog/
+foodpanda_sellers_app/.history
+foodpanda_sellers_app/.svn/
+foodpanda_sellers_app/migrate_working_dir/
+
+# IntelliJ related
+foodpanda_sellers_app/*.iml
+foodpanda_sellers_app/*.ipr
+foodpanda_sellers_app/*.iws
+foodpanda_sellers_app/.idea/
+
+# The .vscode folder contains launch configuration and tasks you configure in
+# VS Code which you may wish to be included in version control, so this line
+# is commented out by default.
+#.vscode/
+
+# Flutter/Dart/Pub related
+foodpanda_sellers_app/**/doc/api/
+foodpanda_sellers_app/**/ios/Flutter/.last_build_id
+foodpanda_sellers_app/.dart_tool/
+foodpanda_sellers_app/.flutter-plugins
+foodpanda_sellers_app/.flutter-plugins-dependencies
+foodpanda_sellers_app/.packages
+foodpanda_sellers_app/.pub-cache/
+foodpanda_sellers_app/.pub/
+foodpanda_sellers_app/build/
+foodpanda_sellers_app/pubspec.lock
+
+# Symbolication related
+foodpanda_sellers_app/app.*.symbols
+
+# Obfuscation related
+foodpanda_sellers_app/app.*.map.json
+
+# Android Studio will place build artifacts here
+foodpanda_sellers_app/android/app/debug
+foodpanda_sellers_app/android/app/profile
+foodpanda_sellers_app/android/app/release
+
+# Ios
+foodpanda_sellers_app/ios/Podfile.lock
+
+# Env
+foodpanda_sellers_app/.env
+
+
+#------------------------------------------------
+## foodpanda_sellers_app/
+# Miscellaneous
+/foodpanda_users_app/*.class
+/foodpanda_users_app/*.log
+/foodpanda_users_app/*.pyc
+/foodpanda_users_app/*.swp
+/foodpanda_users_app/.DS_Store
+/foodpanda_users_app/.atom/
+/foodpanda_users_app/.buildlog/
+/foodpanda_users_app/.history
+/foodpanda_users_app/.svn/
+/foodpanda_users_app/migrate_working_dir/
+
+# IntelliJ related
+/foodpanda_users_app/*.iml
+/foodpanda_users_app/*.ipr
+/foodpanda_users_app/*.iws
+/foodpanda_users_app/.idea/
+
+# The .vscode folder contains launch configuration and tasks you configure in
+# VS Code which you may wish to be included in version control, so this line
+# is commented out by default.
+#.vscode/
+
+# Flutter/Dart/Pub related
+/foodpanda_users_app/**/doc/api/
+/foodpanda_users_app/**/ios/Flutter/.last_build_id
+/foodpanda_users_app/.dart_tool/
+/foodpanda_users_app/.flutter-plugins
+/foodpanda_users_app/.flutter-plugins-dependencies
+/foodpanda_users_app/.packages
+/foodpanda_users_app/.pub-cache/
+/foodpanda_users_app/.pub/
+/foodpanda_users_app/build/
+/foodpanda_users_app/pubspec.lock
+
+# Symbolication related
+/foodpanda_users_app/app.*.symbols
+
+# Obfuscation related
+/foodpanda_users_app/app.*.map.json
+
+# Android Studio will place build artifacts here
+/foodpanda_users_app/android/app/debug
+/foodpanda_users_app/android/app/profile
+/foodpanda_users_app/android/app/release
+
+# Ios
+/foodpanda_users_app/ios/Podfile.lock
+
+# Env
+/foodpanda_users_app/.env
+
+#-----------------------------------------
 # Miscellaneous
 *.class
 *.log
@@ -8,6 +231,7 @@
 .buildlog/
 .history
 .svn/
+migrate_working_dir/
 
 # IntelliJ related
 *.iml
@@ -30,9 +254,7 @@
 .pub-cache/
 .pub/
 /build/
-
-# Web related
-lib/generated_plugin_registrant.dart
+pubspec.lock
 
 # Symbolication related
 app.*.symbols
@@ -50,4 +272,3 @@ app.*.map.json
 
 # Env
 .env
-
