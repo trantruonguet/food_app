@@ -53,9 +53,6 @@ pubspec.lock
 # Env
 /foodpanda_admin_web_portal/.env
 
-/foodpanda_sellers_app/
-/foodpanda_users_app/
-
 #------------------------------------------------
 ## foodpanda_riders_app/
 # Miscellaneous
