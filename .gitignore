@@ -34,7 +34,7 @@
 /foodpanda_admin_web_portal/.pub-cache/
 /foodpanda_admin_web_portal/.pub/
 /foodpanda_admin_web_portal/build/
-pubspec.lock
+/foodpanda_admin_web_portal/pubspec.lock
 
 # Symbolication related
 /foodpanda_admin_web_portal/app.*.symbols
