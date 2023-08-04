@@ -5,6 +5,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:foodpanda_users_app/global/global.dart';
 import 'package:foodpanda_users_app/mainScreens/home_screen.dart';
+import 'package:foodpanda_users_app/until/colors.dart';
+import 'package:foodpanda_users_app/until/images.dart';
+import 'package:foodpanda_users_app/until/styles.dart';
 import 'package:foodpanda_users_app/widgets/custom_text_field.dart';
 import 'package:foodpanda_users_app/widgets/error_dialog.dart';
 import 'package:foodpanda_users_app/widgets/loading_dialog.dart';
@@ -150,92 +153,150 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Container(
-        child: Column(
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            const SizedBox(
-              height: 10,
-            ),
-            InkWell(
-              onTap: () {
-                _getImage();
-              },
-              child: CircleAvatar(
-                radius: MediaQuery.of(context).size.width * 0.20,
-                backgroundColor: Colors.white,
-                backgroundImage: imageXFile == null
-                    ? null
-                    : FileImage(File(imageXFile!.path)),
-                child: imageXFile == null
-                    ? Icon(
-                        Icons.add_photo_alternate,
-                        size: MediaQuery.of(context).size.width * 0.20,
-                        color: Colors.grey,
-                      )
-                    : null,
-              ),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            Form(
-              key: _formKey,
-              child: Column(
-                children: [
-                  CustomTextField(
-                    data: Icons.person,
-                    controller: nameController,
-                    hintText: "Name",
-                    isObsecre: false,
-                  ),
-                  CustomTextField(
-                    data: Icons.email,
-                    controller: emailController,
-                    hintText: "Email",
-                    isObsecre: false,
-                  ),
-                  CustomTextField(
-                    data: Icons.lock,
-                    controller: passwordController,
-                    hintText: "Password",
-                    isObsecre: true,
-                  ),
-                  CustomTextField(
-                    data: Icons.lock,
-                    controller: confirmPasswordController,
-                    hintText: "Confirm Password",
-                    isObsecre: true,
-                  ),
-                ],
-              ),
-            ),
-            const SizedBox(
-              height: 30,
-            ),
-            ElevatedButton(
-              child: const Text(
-                "Sign Up",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              style: ElevatedButton.styleFrom(
-                primary: Colors.cyan,
-                padding: EdgeInsets.symmetric(horizontal: 50, vertical: 10),
-              ),
-              onPressed: () {
-                formValidation();
-              },
-            ),
-            const SizedBox(
-              height: 30,
-            ),
-          ],
+    return Stack(
+      children: [
+        SizedBox(
+          width: double.infinity,
+          child: Image.asset(
+            Images.bgLogin,
+            fit: BoxFit.fill,
+          ),
         ),
-      ),
+        SingleChildScrollView(
+          child: Container(
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                const SizedBox(
+                  height: 10,
+                ),
+                InkWell(
+                  onTap: () {
+                    _getImage();
+                  },
+                  child: CircleAvatar(
+                    radius: MediaQuery.of(context).size.width * 0.20,
+                    backgroundColor: Colors.white,
+                    backgroundImage: imageXFile == null
+                        ? null
+                        : FileImage(File(imageXFile!.path)),
+                    child: imageXFile == null
+                        ? Icon(
+                            Icons.add_photo_alternate,
+                            size: MediaQuery.of(context).size.width * 0.20,
+                            color: Colors.grey,
+                          )
+                        : null,
+                  ),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Form(
+                  key: _formKey,
+                  child: Column(
+                    children: [
+                      CustomTextField(
+                        data: Icons.person,
+                        controller: nameController,
+                        hintText: "Name",
+                        isObsecre: false,
+                      ),
+                      CustomTextField(
+                        data: Icons.email,
+                        controller: emailController,
+                        hintText: "Email",
+                        isObsecre: false,
+                      ),
+                      CustomTextField(
+                        data: Icons.lock,
+                        controller: passwordController,
+                        hintText: "Password",
+                        isObsecre: true,
+                      ),
+                      CustomTextField(
+                        data: Icons.lock,
+                        controller: confirmPasswordController,
+                        hintText: "Confirm Password",
+                        isObsecre: true,
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(
+                  height: 30,
+                ),
+                // ElevatedButton(
+                //   child: const Text(
+                //     "Sign Up",
+                //     style: TextStyle(
+                //       color: Colors.white,
+                //       fontWeight: FontWeight.bold,
+                //     ),
+                //   ),
+                //   style: ElevatedButton.styleFrom(
+                //     primary: Colors.cyan,
+                //     padding: EdgeInsets.symmetric(horizontal: 50, vertical: 10),
+                //   ),
+                //   onPressed: () {
+                //     formValidation();
+                //   },
+                // ),
+                const SizedBox(
+                  height: 32,
+                ),
+                Container(
+                  alignment: Alignment.center,
+                  child: InkWell(
+                    onTap: () {
+                      formValidation();
+                    },
+                    child: Container(
+                      height: 60,
+                      width: 248,
+                      decoration: const BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(28)),
+                        color: ColorUtil.orangeFE,
+                      ),
+                      child: Center(
+                        child: Text(
+                          'SIGN UP',
+                          style: Styles.styleWhite15700,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 30,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Already have an account?',
+                      style: Styles.styleblack5B14500,
+                    ),
+                    const SizedBox(
+                      width: 4,
+                    ),
+                    GestureDetector(
+                      onTap: () {},
+                      child: Text(
+                        'Login',
+                        style: Styles.styleOrange14500,
+                      ),
+                    )
+                  ],
+                ),
+                const SizedBox(
+                  height: 30,
+                ),
+              ],
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
