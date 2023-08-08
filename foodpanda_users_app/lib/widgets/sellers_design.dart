@@ -27,43 +27,54 @@ class _SellersDesignWidgetState extends State<SellersDesignWidget> {
       child: Padding(
         padding: const EdgeInsets.all(5.0),
         child: Container(
-          height: 280,
+          height: 300,
           width: MediaQuery.of(context).size.width,
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Divider(
-                height: 4,
-                thickness: 3,
-                color: Colors.grey[300],
+              SizedBox(
+                height: 10,
               ),
-              Image.network(
-                widget.model!.sellerAvatarUrl!,
-                height: 220.0,
-                fit: BoxFit.cover,
+              ClipRRect(
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(16.0),
+                  topRight: Radius.circular(16.0),
+                ),
+                child: Image.network(
+                  widget.model!.sellerAvatarUrl!,
+                  height: 220.0,
+                  width: double.infinity,
+                  fit: BoxFit.fitWidth,
+                ),
               ),
               const SizedBox(
-                height: 1.0,
+                height: 8.0,
               ),
-              Text(
-                widget.model!.sellerName!,
-                style: const TextStyle(
-                  color: Colors.cyan,
-                  fontSize: 20,
-                  fontFamily: "Train",
+              Container(
+                padding: EdgeInsets.only(left: 16),
+                child: Text(
+                  widget.model!.sellerName!,
+                  style: const TextStyle(
+                    fontSize: 20,
+                  ),
                 ),
               ),
-              Text(
-                widget.model!.sellerEmail!,
-                style: const TextStyle(
-                  color: Colors.grey,
-                  fontSize: 12,
+              const SizedBox(
+                height: 6.0,
+              ),
+              Container(
+                padding: EdgeInsets.only(left: 16),
+                child: Text(
+                  widget.model!.sellerEmail!,
+                  style: const TextStyle(
+                    color: Colors.grey,
+                    fontSize: 12,
+                  ),
                 ),
               ),
-              Divider(
-                height: 4,
-                thickness: 3,
-                color: Colors.grey[300],
-              ),
+              SizedBox(
+                height: 10,
+              )
             ],
           ),
         ),

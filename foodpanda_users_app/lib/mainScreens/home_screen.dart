@@ -7,6 +7,7 @@ import 'package:foodpanda_users_app/assistantMethods/assistant_methods.dart';
 import 'package:foodpanda_users_app/global/global.dart';
 import 'package:foodpanda_users_app/models/sellers.dart';
 import 'package:foodpanda_users_app/splashScreen/splash_screen.dart';
+import 'package:foodpanda_users_app/until/images.dart';
 import 'package:foodpanda_users_app/widgets/sellers_design.dart';
 import 'package:foodpanda_users_app/widgets/my_drawer.dart';
 import 'package:foodpanda_users_app/widgets/progress_bar.dart';
@@ -75,32 +76,60 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
+  var scaffoldKey = GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: scaffoldKey,
       appBar: AppBar(
+        // flexibleSpace: Container(
+        //   decoration: const BoxDecoration(
+        //       gradient: LinearGradient(
+        //     colors: [
+        //       Colors.cyan,
+        //       Colors.amber,
+        //     ],
+        //     begin: FractionalOffset(0.0, 0.0),
+        //     end: FractionalOffset(1.0, 0.0),
+        //     stops: [0.0, 1.0],
+        //     tileMode: TileMode.clamp,
+        //   )),
+        // ),
         flexibleSpace: Container(
-          decoration: const BoxDecoration(
-              gradient: LinearGradient(
-            colors: [
-              Colors.cyan,
-              Colors.amber,
-            ],
-            begin: FractionalOffset(0.0, 0.0),
-            end: FractionalOffset(1.0, 0.0),
-            stops: [0.0, 1.0],
-            tileMode: TileMode.clamp,
-          )),
+          padding: EdgeInsets.only(left: 150, top: 32),
+          color: Colors.white,
+          child: Row(children: [
+            Column(
+              children: [
+                Text('Deliver to'),
+                Text(
+                  'Hanoi Vietnam',
+                )
+              ],
+            ),
+            Spacer(),
+            Image.asset(
+              Images.icAvatar,
+              height: 60,
+              width: 60,
+            )
+          ]),
         ),
-        title: const Text(
-          "iFood",
-          style: TextStyle(fontSize: 45, fontFamily: "Signatra"),
-        ),
+        title: null,
         centerTitle: true,
+        leading: InkWell(
+            onTap: () {
+              scaffoldKey.currentState?.openDrawer();
+            },
+            child: Image.asset(Images.icMenu)),
       ),
       drawer: MyDrawer(),
       body: CustomScrollView(
         slivers: [
+          SliverToBoxAdapter(
+            child: Text('Featured Restaurants'),
+          ),
           SliverToBoxAdapter(
             child: Padding(
               padding: const EdgeInsets.all(10.0),
@@ -109,8 +138,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 width: MediaQuery.of(context).size.width,
                 child: CarouselSlider(
                   options: CarouselOptions(
-                    height: MediaQuery.of(context).size.height * .3,
-                    aspectRatio: 16 / 9,
+                    // height: MediaQuery.of(context).size.height * .3,
+                    // aspectRatio: 16 / 9,
                     viewportFraction: 0.8,
                     initialPage: 0,
                     enableInfiniteScroll: true,
@@ -129,13 +158,32 @@ class _HomeScreenState extends State<HomeScreen> {
                         width: MediaQuery.of(context).size.width,
                         margin: const EdgeInsets.symmetric(horizontal: 1.0),
                         decoration: const BoxDecoration(
-                          color: Colors.black,
+                          color: Colors.white,
+                          borderRadius: BorderRadius.all(Radius.circular(8)),
                         ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(4.0),
-                          child: Image.asset(
-                            index,
-                            fit: BoxFit.fill,
+                        child: Container(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              ClipRRect(
+                                borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(8.0),
+                                    topRight: Radius.circular(8.0)),
+                                child: Image.asset(
+                                  index,
+                                  fit: BoxFit.fitWidth,
+                                  width: MediaQuery.of(context).size.width,
+                                  height: 136,
+                                ),
+                              ),
+                              SizedBox(
+                                height: 8,
+                              ),
+                              Container(
+                                padding: EdgeInsets.only(left: 10),
+                                child: Text('McDonald\'s'),
+                              ),
+                            ],
                           ),
                         ),
                       );
@@ -144,6 +192,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
             ),
+          ),
+          SliverToBoxAdapter(
+            child: Text('List Restaurants'),
           ),
           StreamBuilder<QuerySnapshot>(
             stream:

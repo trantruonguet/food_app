@@ -6,6 +6,8 @@ class Images {
   static const String icDocument = 'images/ic_document.png';
   static const String icSearch = 'images/ic_search.png';
   static const String icHistory = 'images/ic_history.png';
+  static const String icMenu = 'images/ic_menu.png';
+  static const String icAvatar = 'images/ic_avatar.png';
 
   // background
   static const String bgLogin = 'images/bg_login.png';

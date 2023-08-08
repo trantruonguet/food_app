@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:foodpanda_users_app/authentication/login.dart';
 import 'package:foodpanda_users_app/global/global.dart';
 import 'package:foodpanda_users_app/mainScreens/home_screen.dart';
 import 'package:foodpanda_users_app/until/colors.dart';
@@ -153,150 +154,170 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        SizedBox(
-          width: double.infinity,
-          child: Image.asset(
-            Images.bgLogin,
-            fit: BoxFit.fill,
+    return Scaffold(
+      body: Stack(
+        children: [
+          SizedBox(
+            width: double.infinity,
+            child: Image.asset(
+              Images.bgLogin,
+              fit: BoxFit.fill,
+            ),
           ),
-        ),
-        SingleChildScrollView(
-          child: Container(
-            child: Column(
-              mainAxisSize: MainAxisSize.max,
-              children: [
-                const SizedBox(
-                  height: 10,
-                ),
-                InkWell(
-                  onTap: () {
-                    _getImage();
-                  },
-                  child: CircleAvatar(
-                    radius: MediaQuery.of(context).size.width * 0.20,
-                    backgroundColor: Colors.white,
-                    backgroundImage: imageXFile == null
-                        ? null
-                        : FileImage(File(imageXFile!.path)),
-                    child: imageXFile == null
-                        ? Icon(
-                            Icons.add_photo_alternate,
-                            size: MediaQuery.of(context).size.width * 0.20,
-                            color: Colors.grey,
-                          )
-                        : null,
+          SingleChildScrollView(
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 25),
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const SizedBox(
+                    height: 60,
+                    width: double.infinity,
                   ),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                Form(
-                  key: _formKey,
-                  child: Column(
-                    children: [
-                      CustomTextField(
-                        data: Icons.person,
-                        controller: nameController,
-                        hintText: "Name",
-                        isObsecre: false,
-                      ),
-                      CustomTextField(
-                        data: Icons.email,
-                        controller: emailController,
-                        hintText: "Email",
-                        isObsecre: false,
-                      ),
-                      CustomTextField(
-                        data: Icons.lock,
-                        controller: passwordController,
-                        hintText: "Password",
-                        isObsecre: true,
-                      ),
-                      CustomTextField(
-                        data: Icons.lock,
-                        controller: confirmPasswordController,
-                        hintText: "Confirm Password",
-                        isObsecre: true,
-                      ),
-                    ],
+                  Text(
+                    'Sign Up',
+                    style: Styles.style36700,
                   ),
-                ),
-                const SizedBox(
-                  height: 30,
-                ),
-                // ElevatedButton(
-                //   child: const Text(
-                //     "Sign Up",
-                //     style: TextStyle(
-                //       color: Colors.white,
-                //       fontWeight: FontWeight.bold,
-                //     ),
-                //   ),
-                //   style: ElevatedButton.styleFrom(
-                //     primary: Colors.cyan,
-                //     padding: EdgeInsets.symmetric(horizontal: 50, vertical: 10),
-                //   ),
-                //   onPressed: () {
-                //     formValidation();
-                //   },
-                // ),
-                const SizedBox(
-                  height: 32,
-                ),
-                Container(
-                  alignment: Alignment.center,
-                  child: InkWell(
-                    onTap: () {
-                      formValidation();
-                    },
-                    child: Container(
-                      height: 60,
-                      width: 248,
-                      decoration: const BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(28)),
-                        color: ColorUtil.orangeFE,
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Center(
+                    child: InkWell(
+                      onTap: () {
+                        _getImage();
+                      },
+                      child: CircleAvatar(
+                        radius: MediaQuery.of(context).size.width * 0.15,
+                        backgroundColor: Colors.orangeAccent,
+                        backgroundImage: imageXFile == null
+                            ? null
+                            : FileImage(File(imageXFile!.path)),
+                        child: imageXFile == null
+                            ? Icon(
+                                Icons.add_photo_alternate,
+                                size: MediaQuery.of(context).size.width * 0.15,
+                                color: Colors.grey,
+                              )
+                            : null,
                       ),
-                      child: Center(
-                        child: Text(
-                          'SIGN UP',
-                          style: Styles.styleWhite15700,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Form(
+                    key: _formKey,
+                    child: Column(
+                      children: [
+                        CustomTextField(
+                          data: Icons.person,
+                          controller: nameController,
+                          hintText: "Name",
+                          isObsecre: false,
+                        ),
+                        CustomTextField(
+                          data: Icons.email,
+                          controller: emailController,
+                          hintText: "Email",
+                          isObsecre: false,
+                        ),
+                        CustomTextField(
+                          data: Icons.lock,
+                          controller: passwordController,
+                          hintText: "Password",
+                          isObsecre: true,
+                        ),
+                        CustomTextField(
+                          data: Icons.lock,
+                          controller: confirmPasswordController,
+                          hintText: "Confirm Password",
+                          isObsecre: true,
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  // ElevatedButton(
+                  //   child: const Text(
+                  //     "Sign Up",
+                  //     style: TextStyle(
+                  //       color: Colors.white,
+                  //       fontWeight: FontWeight.bold,
+                  //     ),
+                  //   ),
+                  //   style: ElevatedButton.styleFrom(
+                  //     primary: Colors.cyan,
+                  //     padding: EdgeInsets.symmetric(horizontal: 50, vertical: 10),
+                  //   ),
+                  //   onPressed: () {
+                  //     formValidation();
+                  //   },
+                  // ),
+                  const SizedBox(
+                    height: 32,
+                  ),
+                  Container(
+                    alignment: Alignment.center,
+                    child: InkWell(
+                      onTap: () {
+                        formValidation();
+                      },
+                      child: Container(
+                        height: 60,
+                        width: 248,
+                        decoration: const BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(28)),
+                          color: ColorUtil.orangeFE,
+                        ),
+                        child: Center(
+                          child: Text(
+                            'SIGN UP',
+                            style: Styles.styleWhite15700,
+                          ),
                         ),
                       ),
                     ),
                   ),
-                ),
-                const SizedBox(
-                  height: 30,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      'Already have an account?',
-                      style: Styles.styleblack5B14500,
-                    ),
-                    const SizedBox(
-                      width: 4,
-                    ),
-                    GestureDetector(
-                      onTap: () {},
-                      child: Text(
-                        'Login',
-                        style: Styles.styleOrange14500,
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Already have an account?',
+                        style: Styles.styleblack5B14500,
                       ),
-                    )
-                  ],
-                ),
-                const SizedBox(
-                  height: 30,
-                ),
-              ],
+                      const SizedBox(
+                        width: 4,
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.pop(context);
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (c) => const LoginScreen()));
+                        },
+                        child: Text(
+                          'Login',
+                          style: Styles.styleOrange14500,
+                        ),
+                      )
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                ],
+              ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
