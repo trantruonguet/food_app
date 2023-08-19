@@ -56,13 +56,13 @@ class _ItemsDesignWidgetState extends State<ItemsDesignWidget> {
                     top: 10,
                     left: 10,
                     child: Container(
-                      height: 34,
+                      height: 44,
                       decoration: const BoxDecoration(
-                          borderRadius: BorderRadius.all(Radius.circular(8)),
+                          borderRadius: BorderRadius.all(Radius.circular(20)),
                           color: Colors.white),
                       child: Container(
                         padding: const EdgeInsets.symmetric(
-                            horizontal: 8, vertical: 4),
+                            horizontal: 16, vertical: 10),
                         child: Row(
                           children: [
                             Text(
@@ -100,9 +100,8 @@ class _ItemsDesignWidgetState extends State<ItemsDesignWidget> {
                       widget.model!.title!,
                       style: const TextStyle(
                           color: Colors.black,
-                          fontSize: 18,
+                          fontSize: 24,
                           fontWeight: FontWeight.bold
-                          // fontFamily: "Train",
                           ),
                     ),
                     const SizedBox(
@@ -112,7 +111,7 @@ class _ItemsDesignWidgetState extends State<ItemsDesignWidget> {
                       widget.model!.shortInfo!,
                       style: const TextStyle(
                         color: Colors.black54,
-                        fontSize: 15,
+                        fontSize: 14,
                       ),
                     ),
                   ],

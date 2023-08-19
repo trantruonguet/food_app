@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodpanda_users_app/until/colors.dart';
 
 
 
@@ -12,31 +13,34 @@ class TextWidgetHeader extends SliverPersistentHeaderDelegate
   {
     return InkWell(
       child: Container(
-        decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              colors: [
-                Colors.cyan,
-                Colors.amber,
-              ],
-              begin:  FractionalOffset(0.0, 0.0),
-              end:  FractionalOffset(1.0, 0.0),
-              stops: [0.0, 1.0],
-              tileMode: TileMode.clamp,
-            )
-        ),
-        height: 80.0,
+        // decoration: const BoxDecoration(
+        //     gradient: LinearGradient(
+        //       colors: [
+        //         Colors.cyan,
+        //         Colors.amber,
+        //       ],
+        //       begin:  FractionalOffset(0.0, 0.0),
+        //       end:  FractionalOffset(1.0, 0.0),
+        //       stops: [0.0, 1.0],
+        //       tileMode: TileMode.clamp,
+        //     )
+        // ),
+        padding: EdgeInsets.symmetric(horizontal: 16),
+        color: Colors.white,
+        height: 60.0,
         width: MediaQuery.of(context).size.width,
-        alignment: Alignment.center,
+        alignment: Alignment.centerLeft,
         child: InkWell(
           child: Text(
             title!,
             maxLines: 2,
-            textAlign: TextAlign.center,
+            textAlign: TextAlign.start,
             style: const TextStyle(
-              fontFamily: "Signatra",
-              fontSize: 30,
+              // fontFamily: "Signatra",
+              fontSize: 18,
+              fontWeight: FontWeight.w600,
               letterSpacing: 2,
-              color: Colors.white,
+              color: ColorUtil.black5B,
             ),
           ),
         ),

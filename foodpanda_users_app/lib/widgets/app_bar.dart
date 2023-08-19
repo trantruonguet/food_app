@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:foodpanda_users_app/assistantMethods/cart_Item_counter.dart';
 import 'package:foodpanda_users_app/mainScreens/cart_screen.dart';
+import 'package:foodpanda_users_app/until/images.dart';
 import 'package:provider/provider.dart';
 
 class MyAppBar extends StatefulWidget implements PreferredSizeWidget {
@@ -23,28 +24,49 @@ class _MyAppBarState extends State<MyAppBar> {
   Widget build(BuildContext context) {
     return AppBar(
       flexibleSpace: Container(
-        decoration: const BoxDecoration(
-            gradient: LinearGradient(
-          colors: [
-            Colors.cyan,
-            Colors.amber,
-          ],
-          begin: FractionalOffset(0.0, 0.0),
-          end: FractionalOffset(1.0, 0.0),
-          stops: [0.0, 1.0],
-          tileMode: TileMode.clamp,
-        )),
+        // decoration: const BoxDecoration(
+        //     gradient: LinearGradient(
+        //   colors: [
+        //     Colors.cyan,
+        //     Colors.amber,
+        //   ],
+        //   begin: FractionalOffset(0.0, 0.0),
+        //   end: FractionalOffset(1.0, 0.0),
+        //   stops: [0.0, 1.0],
+        //   tileMode: TileMode.clamp,
+        // )),
+        padding: EdgeInsets.only(left: 150, top: 32),
+        color: Colors.white,
+        child: Row(children: [
+            Column(
+              children: [
+                Text('Deliver to'),
+                Text(
+                  'Hanoi Vietnam',
+                )
+              ],
+            ),
+            Spacer(),
+            Image.asset(
+              Images.icAvatar,
+              height: 60,
+              width: 60,
+            ),
+            SizedBox(width: 50,)
+          ]),
       ),
-      leading: IconButton(
-        icon: const Icon(Icons.arrow_back),
-        onPressed: () {
-          Navigator.pop(context);
-        },
-      ),
-      title: const Text(
-        "iFood",
-        style: TextStyle(fontSize: 45, fontFamily: "Signatra"),
-      ),
+      leading: 
+      // IconButton(
+      //   icon: const Icon(Icons.arrow_back),
+      //   onPressed: () {
+      //     Navigator.pop(context);
+      //   },
+      // ),
+       InkWell(
+            onTap: () {
+              Navigator.pop(context);
+            },
+            child: Image.asset(Images.icBack, height: 38, width: 38,)),
       centerTitle: true,
       automaticallyImplyLeading: true,
       actions: [

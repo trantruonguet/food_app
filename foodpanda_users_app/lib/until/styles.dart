@@ -20,6 +20,11 @@ class Styles {
     fontWeight: FontWeight.w500,
   );
 
+  static final TextStyle styleGray14 = style.copyWith(
+    color: ColorUtil.gray97,
+    fontSize: 14,
+  );
+
   static final TextStyle styleWhite15700 = style.copyWith(
     color: Colors.white,
     fontSize: 15,
@@ -39,6 +44,10 @@ class Styles {
   static final TextStyle styleGray16 = style.copyWith(
     color: ColorUtil.gray97,
     fontSize: 16,
+  );
+
+  static final TextStyle style20 = style.copyWith(
+    fontSize: 20,
   );
 
   static final TextStyle style36700 = style.copyWith(
