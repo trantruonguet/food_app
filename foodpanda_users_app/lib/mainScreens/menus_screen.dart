@@ -1,10 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:foodpanda_users_app/assistantMethods/assistant_methods.dart';
 import 'package:foodpanda_users_app/models/menus.dart';
 import 'package:foodpanda_users_app/models/sellers.dart';
-import 'package:foodpanda_users_app/splashScreen/splash_screen.dart';
 import 'package:foodpanda_users_app/until/colors.dart';
 import 'package:foodpanda_users_app/until/images.dart';
 import 'package:foodpanda_users_app/widgets/menus_design.dart';

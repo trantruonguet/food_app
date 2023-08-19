@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'login.dart';
 import 'register.dart';
 
 class AuthScreen extends StatefulWidget {

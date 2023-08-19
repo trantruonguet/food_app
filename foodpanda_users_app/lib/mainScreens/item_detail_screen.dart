@@ -18,6 +18,8 @@ class ItemDetailsScreen extends StatefulWidget {
 class _ItemDetailsScreenState extends State<ItemDetailsScreen> {
   TextEditingController counterTextEditingController = TextEditingController();
 
+  int itemCount = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -67,11 +69,21 @@ class _ItemDetailsScreenState extends State<ItemDetailsScreen> {
                 const Spacer(),
                 Row(
                   children: [
-                    InkWell(child: Image.asset(Images.icSub, height: 36, width: 36,)),
+                    InkWell(child: Image.asset(Images.icSub, height: 36, width: 36,), onTap: () {
+                      setState(() {
+                        if(itemCount > 0) {
+                          itemCount--;
+                        };
+                      });
+                    },),
                     const SizedBox(width: 8,),
-                    Text('01', style: Styles.style14.copyWith(fontWeight: FontWeight.w700),),
+                    Text('$itemCount', style: Styles.style14.copyWith(fontWeight: FontWeight.w700),),
                     const SizedBox(width: 8,),
-                    InkWell(child: Image.asset(Images.icAdd, height: 36, width: 36,))
+                    InkWell(child: Image.asset(Images.icAdd, height: 36, width: 36,), onTap: () {
+                      setState(() {
+                        itemCount++;
+                      });
+                    },)
                   ],
                 )
               //   Container(
@@ -108,7 +120,7 @@ class _ItemDetailsScreenState extends State<ItemDetailsScreen> {
         width: double.infinity,
             child: InkWell(
               onTap: () {
-                int itemCounter = int.parse(counterTextEditingController.text);
+                // int itemCounter = int.parse(counterTextEditingController.text);
       
                 List<String> separateItemIDsList = separateItemIDs();
       
@@ -117,7 +129,7 @@ class _ItemDetailsScreenState extends State<ItemDetailsScreen> {
                     ? Fluttertoast.showToast(msg: "Item is already in Cart.")
                     :
                     //2.add to cart
-                    addItemToCart(widget.model!.itemID, context, itemCounter);
+                    addItemToCart(widget.model!.itemID, context, itemCount);
               },
               child: Container(
                 decoration: const BoxDecoration(
@@ -127,11 +139,10 @@ class _ItemDetailsScreenState extends State<ItemDetailsScreen> {
                 height: 80,
                 child: Container(
                   padding: const EdgeInsets.symmetric(horizontal: 100),
-                  width: 100,
                   child: Center(
                     child: Container(
-                      width: 210,
-                      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                      width: 180,
+                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
                       margin: const EdgeInsets.only(bottom: 12),
                       decoration: const BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(40)),
